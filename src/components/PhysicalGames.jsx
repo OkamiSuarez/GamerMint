@@ -1,9 +1,9 @@
 // import React from 'react'
 
-const VirtualGames = () => {
+const PhysicalGames = () => {
   return (
     <div>Games</div>
   )
 }
 
-export default VirtualGames
+export default PhysicalGames
