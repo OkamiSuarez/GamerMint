@@ -78,7 +78,7 @@ const ItemCount = () => {
                             <CardFooter>
                                 <Stack spacing={4} direction='row' align='center'>
                                 <Button variant="solid" colorScheme="green" onClick={AddCount}>
-                                    Add
+                                    Add to cart
                                 </Button>
                                 <Button variant="solid" colorScheme="red" onClick={DeleteCount}>
                                     Delete
