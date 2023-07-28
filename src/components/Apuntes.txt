@@ -3,3 +3,9 @@ ITEMLISTCONTAINER.JSX => LOGICA CON RECUPERACION DE DATOS, ENVIA LOS DATOS POR P
 ITEMLIST.JSX => RECIBE LA INFO POR PROPS Y REALIZA UN MAP DEVOLVIENDO POR CADA ELEMENTO UN ITEM.JSX
 
 ITEM => ES UN COMPONENTE DE PRESENTACIÓN Y SOLO MUESTRA LA ESTRUCTURA DE CARD CON LA INFO QUE LE LLEGA.
+
+Hay que hacer click en el imagen y nombre del producto en el boton detalle
+
+El boton hace que se lea el ID de lo que le pasamos y muestra la card de lo que queremos ver 
+
+despues de eso detalles nos va a mostrar la descripción y la card de lo que vamos a comprar 
