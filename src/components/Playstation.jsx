@@ -3,7 +3,7 @@ import {Menu, Button, MenuButton, MenuList, MenuItem, MenuGroup, MenuDivider} fr
 import PhysicalAccessories from "./PhysicalAccessories";
 import PhysicalGames from "./PhysicalGames";
 import VirtualGames from "./VirtualGames";
-import VirtualTokens from "./VirtualTokens";
+import VirtualTokens from "./unused/VirtualTokens";
 import VirtualSubscriptions from "./VirtualSubscriptions";
 
 const Playstation = () => {

@@ -1,5 +1,6 @@
 // import React from 'react'
 // import { Menu, MenuButton, Button, MenuList, MenuOptionGroup, MenuItemOption, MenuDivider } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import Nintendo from "./Nintendo";
 import PersonalComputer from "./PersonalComputer";
@@ -12,24 +13,29 @@ const NavBar = () => {
     <Flex>
       {/* Brand of the project */}
       <Box bg='white' w='100%' p={4} color='white'>
-      <Text fontSize='5xl' color='blue'>GamerMint</Text>
+        <Link to={"/"}>
+          <Text fontSize='5xl' color='blue'>GamerMint</Text>
+        </Link>
       </Box>
       {/* Menu Navbar */}
       <Box bg='white' w='100%' p={4} color='white'>
-      <Xbox></Xbox>
+        <Xbox></Xbox>
       </Box>
       <Box bg='white' w='100%' p={4} color='white'>
-      <Playstation></Playstation>
+        <Playstation></Playstation>
       </Box>
       <Box bg='white' w='100%' p={4} color='white'>
-      <Nintendo></Nintendo>
+        <Nintendo></Nintendo>
       </Box>
       <Box bg='white' w='100%' p={4} color='white'>
-      <PersonalComputer></PersonalComputer>
+        <PersonalComputer></PersonalComputer>
       </Box>
       {/* Cart component */}
       <Box bg='white' w='100%' p={4} color='white'>
-      <CartWidget/>
+        <Link to={"/cart"}>
+        <CartWidget />
+        </Link>
+
       </Box>
 
     </Flex>
