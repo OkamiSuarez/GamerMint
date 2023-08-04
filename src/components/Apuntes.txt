@@ -9,3 +9,5 @@ Hay que hacer click en el imagen y nombre del producto en el boton detalle
 El boton hace que se lea el ID de lo que le pasamos y muestra la card de lo que queremos ver 
 
 despues de eso detalles nos va a mostrar la descripción y la card de lo que vamos a comprar 
+
+const filterProducts = productos.filter((producto) => producto.id == id)

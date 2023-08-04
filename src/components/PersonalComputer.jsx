@@ -5,6 +5,7 @@ import PhysicalGames from "./PhysicalGames";
 import VirtualGames from "./VirtualGames";
 import VirtualTokens from "./unused/VirtualTokens";
 import VirtualSubscriptions from "./VirtualSubscriptions";
+import { Link } from "react-router-dom";
 
 const PersonalComputer = () => {
   return (
@@ -15,25 +16,27 @@ const PersonalComputer = () => {
     PC
   </MenuButton>
   <MenuList>
-    <MenuGroup title='Physical'>
+    {/* <MenuGroup title='Physical'>
       <MenuItem>
         <PhysicalAccessories/>
       </MenuItem>
       <MenuItem>
         <PhysicalGames/>
       </MenuItem>
-    </MenuGroup>
+    </MenuGroup> */}
     <MenuDivider />
     <MenuGroup title='Virtual'>
       <MenuItem>
-        <VirtualGames/>
+        <Link to={"/pc/virtual/games"}>
+          <VirtualGames/>
+        </Link>
       </MenuItem>
-      <MenuItem>
+      {/* <MenuItem>
         <VirtualTokens/>
       </MenuItem>
       <MenuItem>
         <VirtualSubscriptions/>
-      </MenuItem>
+      </MenuItem> */}
     </MenuGroup>
   </MenuList>
 </Menu>
