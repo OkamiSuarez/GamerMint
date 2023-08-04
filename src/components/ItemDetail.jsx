@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { Card, Stack, CardBody, CardFooter, Heading, Button, Box, AbsoluteCenter, Divider, Center, Image, ButtonGroup, Text } from "@chakra-ui/react";
+import { Card, Stack, CardBody, CardFooter, Heading, Button, Divider, Image, ButtonGroup, Text } from "@chakra-ui/react";
 
 const ItemDetail = ({ products }) => {
     const { id } = useParams();
