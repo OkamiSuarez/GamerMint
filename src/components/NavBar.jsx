@@ -10,11 +10,11 @@ import { Box, Text, Flex } from '@chakra-ui/react'
 
 const NavBar = () => {
   return (
-    <Flex>
+    <Flex backgroundColor={"black"}>
       {/* Brand of the project */}
-      <Box bg='white' w='100%' p={4} color='white'>
+      <Box bg='white' w='100%' p={4} color='white' backgroundColor='black'>
         <Link to={"/"}>
-          <Text fontSize='5xl' color='blue'>GamerMint</Text>
+          <Text fontSize='5xl' color='blue' >GamerMint</Text>
         </Link>
       </Box>
       {/* Menu Navbar */}
@@ -27,11 +27,11 @@ const NavBar = () => {
         <Box bg='white' w='100%' p={4} color='white'>
           <Nintendo></Nintendo>
         </Box> */}
-      <Box bg='white' w='100%' p={4} color='white'>
+      <Box bg='white' w='100%' p={4} color='white' backgroundColor='gray'>
         <PersonalComputer></PersonalComputer>
       </Box>
       {/* Cart component */}
-      <Box bg='white' w='100%' p={4} color='white'>
+      <Box bg='white' w='100%' p={4} backgroundColor='black' color='white'>
         <Link to={"/cart"}>
         <CartWidget />
         </Link>

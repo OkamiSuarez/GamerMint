@@ -1,6 +1,11 @@
+
+import { Text } from '@chakra-ui/react'
+
 const Cart = () => {
   return (
-    <div>Cart</div>
+    <>
+      <Text color="black">Cart</Text>
+    </>
   )
 }
 

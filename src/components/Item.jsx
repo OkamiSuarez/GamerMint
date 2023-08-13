@@ -20,7 +20,7 @@ const Item = ({ id, thumbnails, title, description, price }) => {
                 objectFit='cover'
                 maxW={{ base: '100%', sm: '200px' }}
                 src={thumbnails}
-                alt='Caffe Latte'
+                alt={description}
             />
             <Stack>
                 <CardBody>

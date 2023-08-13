@@ -10,7 +10,7 @@ const CartWidget = () => {
         </Box>
     <Spacer/>
         <Box>
-            <p>3</p>
+            <p>Qty</p>
         </Box>
     </Flex>
 

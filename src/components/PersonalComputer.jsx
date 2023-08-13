@@ -12,7 +12,7 @@ const PersonalComputer = () => {
     <div>
         
         <Menu>
-  <MenuButton as={Button} colorScheme='gray' color='white'>
+  <MenuButton as={Button} colorScheme='gray' color='black'>
     PC
   </MenuButton>
   <MenuList>
@@ -25,8 +25,8 @@ const PersonalComputer = () => {
       </MenuItem>
     </MenuGroup> */}
     <MenuDivider />
-    <MenuGroup title='Virtual'>
-      <MenuItem>
+    <MenuGroup title='Virtual' color='black'>
+      <MenuItem color='black' colorScheme='gray'>
         <Link to={"/pc/virtual/games"}>
           <VirtualGames/>
         </Link>
