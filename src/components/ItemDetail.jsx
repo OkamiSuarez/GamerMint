@@ -3,7 +3,7 @@ import {Card, Stack, CardBody, CardFooter, Heading, Button, Divider, Image, Butt
 import { useState, useEffect } from "react";
 
 const ItemDetail = ({ products }) => {
-    let headerCart = []
+    const headerCart = [0]
     const [counter, setCounter] = useState(0)
     const [stock, setStock] = useState(25)
     const [cart, setCart] = useState(0)
@@ -34,27 +34,20 @@ const ItemDetail = ({ products }) => {
         setCart(cart+qty)
         console.log('cart')
         console.log(cart)
-        headerCart.push(cart)
-        console.log('headerCart')
-        console.log(headerCart)
-        // console.log('funciona')
-        // counterSum = +counter
-        // console.log(counterSum)
-        // console.log('qty')
-        // console.log(qty)
-        // let qtyAdded = qty 
-        // console.log('qtyAdded')
-        // console.log(qtyAdded)
-        // counterSum = (counterSum + qtyAdded)
-        // console.log('counterSum')
-        // console.log(counterSum)
-        // const totalCart = cart.push(qty)
-        // console.log('totalCart')
-        // console.log(totalCart)
-        // console.log('Cart')
-        // console.log(cart)
-        setCounter(0)
-        setStock(stock)
+        if (qty === 0){
+            console.log('no value')
+            console.log('headerCart')
+            console.log(headerCart)
+            setCounter(0)
+            setStock(stock)
+        }else{
+            headerCart.push(cart)
+            console.log('headerCart')
+            console.log(headerCart)
+            setCounter(0)
+            setStock(stock)
+        }
+
     }
 
 
@@ -110,6 +103,7 @@ const ItemDetail = ({ products }) => {
                                         -
                                     </Button>
                                     <Text>Cart {cart}</Text>
+                                    <Text>cart array {headerCart[1]}</Text>
                                 </Stack>
                                 </ButtonGroup>
                             </CardFooter>
