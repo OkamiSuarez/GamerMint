@@ -3,9 +3,11 @@ import {Card, Stack, CardBody, CardFooter, Heading, Button, Divider, Image, Butt
 import { useState, useEffect } from "react";
 
 const ItemDetail = ({ products }) => {
-
+    let headerCart = []
     const [counter, setCounter] = useState(0)
     const [stock, setStock] = useState(25)
+    const [cart, setCart] = useState(0)
+    // const cart =[]
     const AddCount = () => {
         if (stock <= 0) {
             console.log('stock empty')
@@ -24,11 +26,36 @@ const ItemDetail = ({ products }) => {
             setStock(stock + 1)
         }
     }
-    const ResetCount = () => {
+    // const ResetCount = () => {
+    //     setCounter(0)
+    //     setStock(stock)
+    // }
+    const onAdd = (qty) =>{
+        setCart(cart+qty)
+        console.log('cart')
+        console.log(cart)
+        headerCart.push(cart)
+        console.log('headerCart')
+        console.log(headerCart)
+        // console.log('funciona')
+        // counterSum = +counter
+        // console.log(counterSum)
+        // console.log('qty')
+        // console.log(qty)
+        // let qtyAdded = qty 
+        // console.log('qtyAdded')
+        // console.log(qtyAdded)
+        // counterSum = (counterSum + qtyAdded)
+        // console.log('counterSum')
+        // console.log(counterSum)
+        // const totalCart = cart.push(qty)
+        // console.log('totalCart')
+        // console.log(totalCart)
+        // console.log('Cart')
+        // console.log(cart)
         setCounter(0)
         setStock(stock)
     }
-    // const onAdd
 
 
 
@@ -75,13 +102,14 @@ const ItemDetail = ({ products }) => {
                                     <Button variant="solid" colorScheme="green" onClick={AddCount}>
                                         +
                                     </Button>
-                                    <Button variant="solid" colorScheme="blue" onClick={ResetCount}>
+                                    <Button variant="solid" colorScheme="blue" onClick={() => onAdd(counter)}>
                                         {/* aqui se agrega el onAdd */}
                                         Add to cart
                                     </Button>
                                     <Button variant="solid" colorScheme="red" onClick={DeleteCount}>
                                         -
                                     </Button>
+                                    <Text>Cart {cart}</Text>
                                 </Stack>
                                 </ButtonGroup>
                             </CardFooter>
