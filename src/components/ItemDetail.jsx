@@ -1,13 +1,47 @@
-import { useParams } from "react-router-dom"
+import {useParams } from "react-router-dom"
 import {Card, Stack, CardBody, CardFooter, Heading, Button, Divider, Image, ButtonGroup, Text } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 
+// PENDIENTE VER POOR QUE EL ARRAY NO SE PROYECTA
+
 const ItemDetail = ({ products }) => {
-    const headerCart = [0]
+
     const [counter, setCounter] = useState(0)
     const [stock, setStock] = useState(25)
-    const [cart, setCart] = useState(0)
-    // const cart =[]
+    const [quantity, setQuantity] = useState(0)
+    const cartArr = []
+    console.log(cartArr)
+
+    const onAdd = (qtyReceived) =>{
+        // console.log('cartArr')
+        // console.log(cartArr)
+        if (qtyReceived === 0){
+            console.log('no value')
+            // setCounter(0)
+            // setStock(stock)
+            if (cartArr[0] === undefined){
+                cartArr.push({
+                    qty:quantity
+                })
+                console.log(cartArr)
+                console.log(quantity)
+            }else{
+                console.log(cartArr)
+            }
+        }else{
+            setQuantity(quantity+qtyReceived)
+            cartArr.push({
+                qty:quantity
+            })
+            setCounter(0)
+            setStock(stock)
+            console.log(cartArr)
+        // console.log(cart)
+
+        }
+
+    }
+
     const AddCount = () => {
         if (stock <= 0) {
             console.log('stock empty')
@@ -18,7 +52,7 @@ const ItemDetail = ({ products }) => {
         }
     }
     const DeleteCount = () => {
-        if (counter <= 1) {
+        if (counter <= 0) {
             setCounter(counter)
             console.log('No more products to delete from cart')
         } else {
@@ -30,27 +64,6 @@ const ItemDetail = ({ products }) => {
     //     setCounter(0)
     //     setStock(stock)
     // }
-    const onAdd = (qty) =>{
-        setCart(cart+qty)
-        console.log('cart')
-        console.log(cart)
-        if (qty === 0){
-            console.log('no value')
-            console.log('headerCart')
-            console.log(headerCart)
-            setCounter(0)
-            setStock(stock)
-        }else{
-            headerCart.push(cart)
-            console.log('headerCart')
-            console.log(headerCart)
-            setCounter(0)
-            setStock(stock)
-        }
-
-    }
-
-
 
     useEffect(() => {
         console.log('counter active')
@@ -78,8 +91,8 @@ const ItemDetail = ({ products }) => {
                                     <Heading size='md'>{p.title}</Heading>
                                     <Text>{p.description}</Text>
                                     <Text color='blue.600' fontSize='2xl'>${p.price}</Text>
-                                    <text><p>Products to buy</p>{counter}</text>
-                                    <text><p>Stock</p>{stock}</text>
+                                    <Text>Products to buy {counter}</Text>
+                                    <Text>Stock {stock}</Text>
                                 </Stack>
                             </CardBody>
                             <Divider />
@@ -102,8 +115,7 @@ const ItemDetail = ({ products }) => {
                                     <Button variant="solid" colorScheme="red" onClick={DeleteCount}>
                                         -
                                     </Button>
-                                    <Text>Cart {cart}</Text>
-                                    <Text>cart array {headerCart[1]}</Text>
+                                    <Text>Cart {quantity}</Text>
                                 </Stack>
                                 </ButtonGroup>
                             </CardFooter>

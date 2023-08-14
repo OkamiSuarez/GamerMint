@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 const Item = ({ id, thumbnails, title, description, price }) => {
 
     // const {id} = useParams()
-    console.log("item")
-    console.log(id)
+    // console.log("item")
+    // console.log(id)
 
     return (
 
