@@ -1,18 +1,39 @@
-import {useParams } from "react-router-dom"
+import {Link, useParams } from "react-router-dom"
 import {Card, Stack, CardBody, CardFooter, Heading, Button, Divider, Image, ButtonGroup, Text } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+
+import { CartContext } from "../context/CartContext";
 
 // PENDIENTE VER POOR QUE EL ARRAY NO SE PROYECTA
 
 const ItemDetail = ({ products }) => {
 
+    const [quantityAdded, setQuantityAdded] = useState(0)
+
+    const{addItem} = useContext(CartContext)
+
+    const handleOnAdd = (quantity) => {
+        setQuantityAdded(quantity)
+
+        const item = {
+            id
+        }
+
+        addItem(item,quantity)
+
+        // Posiblemente tengo que migrar la logica para lograr sacar a context esto de abajo
+        // addItem(cart)
+
+    }
+
     const [counter, setCounter] = useState(0)
     const [stock, setStock] = useState(25)
     const [quantity, setQuantity] = useState(0)
     const cartArr = []
-    console.log(cartArr)
 
-    const onAdd = (qtyReceived) =>{
+    // console.log(cartArr)
+
+    const onAdd = (productId, qtyReceived, productTitle, productPrice) =>{
         // console.log('cartArr')
         // console.log(cartArr)
         if (qtyReceived === 0){
@@ -21,10 +42,14 @@ const ItemDetail = ({ products }) => {
             // setStock(stock)
             if (cartArr[0] === undefined){
                 cartArr.push({
-                    qty:quantity
+                    id:productId,
+                    title:productTitle,
+                    price:productPrice,
+                    qty:quantity,
+                    total: (quantity*productPrice)
                 })
                 console.log(cartArr)
-                console.log(quantity)
+                // console.log(quantity)
             }else{
                 console.log(cartArr)
             }
@@ -66,7 +91,7 @@ const ItemDetail = ({ products }) => {
     // }
 
     useEffect(() => {
-        console.log('counter active')
+        // console.log('counter active')
     }, [counter])
 
     const { id } = useParams();
@@ -108,13 +133,18 @@ const ItemDetail = ({ products }) => {
                                     <Button variant="solid" colorScheme="green" onClick={AddCount}>
                                         +
                                     </Button>
-                                    <Button variant="solid" colorScheme="blue" onClick={() => onAdd(counter)}>
+                                    <Button variant="solid" colorScheme="blue" onClick={() => onAdd(p.id, counter, p.title, p.price)}>
                                         {/* aqui se agrega el onAdd */}
                                         Add to cart
+                                    </Button>
+                                    <Button variant="solid" colorScheme="blue" onClick={handleOnAdd}>
+                                        {/* aqui se agrega el onAdd */}
+                                        Add to cart context
                                     </Button>
                                     <Button variant="solid" colorScheme="red" onClick={DeleteCount}>
                                         -
                                     </Button>
+                                        <Link to='/cart'>Go to cart</Link>
                                     <Text>Cart {quantity}</Text>
                                 </Stack>
                                 </ButtonGroup>
