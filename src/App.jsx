@@ -9,6 +9,7 @@ import ItemListContainer from "./components/ItemListContainer"
 import NavBar from "./components/NavBar"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CartProvider from "./context/CartContext"
+// import { CartContext } from "./context/CartContext"
 
 const App = () => {
   return (
@@ -23,16 +24,6 @@ const App = () => {
             <Route exact path="/category/:id" element={<ItemListContainer />} />
             <Route exact path="/item/:id" element={<ItemDetailContainer />} />
             <Route exact path="/pc/virtual/games" element={<ItemListContainer />} />
-            {/* <Route exact path="/ItemDetailContainer" element={<ItemDetailContainer />} /> */}
-
-          {/* <ItemListContainer
-          greeting="Welcome to GamerMint, upgrade your stats and enjoy a new refreshing way to play"
-          /> */}
-          {/* <Home></Home>
-          <About></About> */}
-          {/* <ItemCount/> */}
-          {/* <Item/> */}
-          {/* <ItemList/> */}
           </Routes>
       </CartProvider>
     </BrowserRouter>

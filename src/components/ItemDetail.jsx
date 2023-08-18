@@ -1,68 +1,75 @@
 import {Link, useParams } from "react-router-dom"
 import {Card, Stack, CardBody, CardFooter, Heading, Button, Divider, Image, ButtonGroup, Text } from "@chakra-ui/react";
 import { useState, useEffect, useContext } from "react";
-
 import { CartContext } from "../context/CartContext";
 
 // PENDIENTE VER POOR QUE EL ARRAY NO SE PROYECTA
 
 const ItemDetail = ({ products }) => {
 
-    const [quantityAdded, setQuantityAdded] = useState(0)
+    const {cart,setCart} = useContext(CartContext)
+    // const [quantityAdded, setQuantityAdded] = useState(0)
 
-    const{addItem} = useContext(CartContext)
+    // const{addItem} = useContext(CartContext)
 
-    const handleOnAdd = (quantity) => {
-        setQuantityAdded(quantity)
+    // const handleOnAdd = (quantity) => {
+    //     setQuantityAdded(quantity)
 
-        const item = {
-            id
-        }
+    //     const item = {
+    //         id
+    //     }
 
-        addItem(item,quantity)
+    //     addItem(item,quantity)
 
-        // Posiblemente tengo que migrar la logica para lograr sacar a context esto de abajo
-        // addItem(cart)
+    //     // Posiblemente tengo que migrar la logica para lograr sacar a context esto de abajo
+    //     // addItem(cart)
 
-    }
+    // }
 
     const [counter, setCounter] = useState(0)
     const [stock, setStock] = useState(25)
     const [quantity, setQuantity] = useState(0)
-    const cartArr = []
-
-    // console.log(cartArr)
 
     const onAdd = (productId, qtyReceived, productTitle, productPrice) =>{
-        // console.log('cartArr')
-        // console.log(cartArr)
-        if (qtyReceived === 0){
-            console.log('no value')
-            // setCounter(0)
-            // setStock(stock)
-            if (cartArr[0] === undefined){
-                cartArr.push({
-                    id:productId,
-                    title:productTitle,
-                    price:productPrice,
-                    qty:quantity,
-                    total: (quantity*productPrice)
-                })
-                console.log(cartArr)
-                // console.log(quantity)
-            }else{
-                console.log(cartArr)
+        console.log('cart value')
+        console.log(cart[0])
+        if (qtyReceived === 0 && cart[0] === undefined){
+            console.log('product not added yet')
+            console.log('cart not created')
+        }else if (qtyReceived === 0 && cart[0] != undefined){
+                console.log('product not added yet but cart created')
+                console.log(cart)
             }
-        }else{
+        else if (qtyReceived != 0){
+
+            console.log('total qty')
+            console.log(quantity)
+            console.log('quantity received')
+            console.log(qtyReceived)
+            
             setQuantity(quantity+qtyReceived)
-            cartArr.push({
-                qty:quantity
-            })
+            console.log('final total qty')
+            console.log(quantity)
+
+            setCart([{
+                id:productId,
+                title:productTitle,
+                price:productPrice,
+                qty:quantity,
+                total: (quantity*productPrice)
+            }])
+            console.log('setCartArray')
+            console.log(cart)
             setCounter(0)
             setStock(stock)
-            console.log(cartArr)
+            // console.log('cartArr')
+            // console.log(cartArr)
+            // console.log('setCartArray')
+            // console.log(cart)
         // console.log(cart)
 
+        }else{
+            console.log('Undefined error')
         }
 
     }
@@ -123,29 +130,18 @@ const ItemDetail = ({ products }) => {
                             <Divider />
                             <CardFooter>
                                 <ButtonGroup spacing='2'>
-                                    {/* <Button variant='solid' colorScheme='blue'>
-                                        Buy now
-                                    </Button>
-                                    <Button variant='ghost' colorScheme='blue'>
-                                        Add to cart
-                                    </Button> */}
                                 <Stack spacing={4} direction='row' align='center'>
                                     <Button variant="solid" colorScheme="green" onClick={AddCount}>
                                         +
                                     </Button>
                                     <Button variant="solid" colorScheme="blue" onClick={() => onAdd(p.id, counter, p.title, p.price)}>
-                                        {/* aqui se agrega el onAdd */}
                                         Add to cart
-                                    </Button>
-                                    <Button variant="solid" colorScheme="blue" onClick={handleOnAdd}>
-                                        {/* aqui se agrega el onAdd */}
-                                        Add to cart context
                                     </Button>
                                     <Button variant="solid" colorScheme="red" onClick={DeleteCount}>
                                         -
-                                    </Button>
+                                    </Button >
                                         <Link to='/cart'>Go to cart</Link>
-                                    <Text>Cart {quantity}</Text>
+                                    {/* <Text>Cart {quantity}</Text> */}
                                 </Stack>
                                 </ButtonGroup>
                             </CardFooter>

@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
     if (products.length > 0) {
       setTimeout(() => {
         resolve(products);
-      }, 2000);
+      }, 100);
     } else {
       reject(new Error("No data found"));
     }
