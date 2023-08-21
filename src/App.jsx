@@ -16,7 +16,6 @@ const App = () => {
     <BrowserRouter>
       <CartProvider>
         <NavBar/>
-
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/about" element={<About />} />
