@@ -1,7 +1,8 @@
-import { useContext, useState, useEffect } from 'react'
+import { useContext, useState } from 'react'
 import { CartContext } from '../context/CartContext'
-import { Text, Center, Card, CardBody, Image, Stack, Heading, Button, ButtonGroup, CardFooter, Divider } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import Loading from './Loading'
+import EmptyCart from './EmptyCart'
 
 
 
@@ -51,7 +52,9 @@ const Cart = () => {
     console.log('Cart loaded')
   }
 
-  // const filteredCart = cart.filter((cart) => cart.id == id)
+  if(cart[0] === undefined){
+    return <EmptyCart/>
+  }else
 
   return (
     <>
