@@ -33,7 +33,8 @@ const Cart = () => {
       } else {
         return currItems.map((item) => {
           if (item.id === id) {
-            console.log(item)
+            // console.log(item)
+            // console.log(item.total)
             if(item.quantity < 1){
               item.quantity = 1
             }
