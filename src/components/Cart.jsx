@@ -23,7 +23,7 @@ const Cart = () => {
 
 
 
-  console.log('cart recibido de context')
+  console.log('cart from context')
   console.log(cart)
 
   const removeItem = (id) => {
