@@ -33,6 +33,10 @@ const Cart = () => {
       } else {
         return currItems.map((item) => {
           if (item.id === id) {
+            console.log(item)
+            if(item.quantity < 1){
+              item.quantity = 1
+            }
             return { ...item, quantity: item.quantity - 1 }
           } else {
             return item
@@ -72,33 +76,7 @@ const Cart = () => {
               <Button variant="solid" colorScheme="green" onClick={()=>removeItem(p.id)}>
                 Remove item
               </Button>
-              {/* <Card maxW='sm'> */}
-              {/* <CardBody> */}
-              {/* <Image src={p.pictureUrl} alt={p.title} borderRadius='lg' /> */}
-              {/* <Stack mt='6' spacing='3'> */}
-              {/* <Heading size='md'>{p.title}</Heading> */}
-              {/* <Text>{p.description}</Text> */}
-              {/* <Text color='blue.600' fontSize='2xl'>${p.price}</Text> */}
-              {/* <Text>Products to buy {counter}</Text>
-                                        <Text>Stock {stock}</Text> */}
-              {/* </Stack> */}
-              {/* </CardBody> */}
-              {/* <Divider /> */}
-              {/* <CardFooter>
-                  <ButtonGroup spacing='2'>
-                    <Stack spacing={4} direction='row' align='center'>
-                      <Button variant="solid" colorScheme="green" >
-                        Remove item
-                      </Button>
-                    </Stack>
-                  </ButtonGroup>
-                </CardFooter> */}
-              {/* <Divider />
-
-              </Card> */}
-
-
-
+              
             </div>
           )
         })}
