@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import { useParams } from 'react-router-dom';
 // import ItemList from "./ItemList";
 
-const Item = ({ id, thumbnails, title, description, price }) => {
+const Item = ({ id, thumbnails, title, description, price, category }) => {
 
     // const {id} = useParams()
     // console.log("item")
@@ -28,6 +28,9 @@ const Item = ({ id, thumbnails, title, description, price }) => {
 
                     <Text py='2'>
                         {description}
+                    </Text>                    
+                    <Text py='2'>
+                        {category}
                     </Text>
                 </CardBody>
                 <CardFooter>

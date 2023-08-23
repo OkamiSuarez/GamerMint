@@ -10,6 +10,7 @@ const ItemList = ({ products }) => {
                         <Item
                         key={p.id}
                         id={p.id}
+                        category={p.category}
                         thumbnails={p.pictureUrl}
                         title={p.title}
                         description={p.description}

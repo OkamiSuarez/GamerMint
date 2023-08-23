@@ -1,11 +1,11 @@
 // import React from 'react'
 import { Menu, Button, MenuButton, MenuList, MenuItem, MenuGroup, MenuDivider } from "@chakra-ui/react";
-import PhysicalAccessories from "./PhysicalAccessories";
-import PhysicalGames from "./PhysicalGames";
+// import PhysicalAccessories from "./PhysicalAccessories";
+// import PhysicalGames from "./PhysicalGames";
 import VirtualGames from "./VirtualGames";
-import VirtualTokens from "./unused/VirtualTokens";
-import VirtualSubscriptions from "./VirtualSubscriptions";
-import { Link } from "react-router-dom";
+// import VirtualTokens from "./unused/VirtualTokens";
+// import VirtualSubscriptions from "./VirtualSubscriptions";
+import { Link, useParams } from "react-router-dom";
 import ReleasedVirtual from "./ReleasedVirtual";
 import PreorderVirtual from "./PreorderVirtual";
 
@@ -30,6 +30,7 @@ const PersonalComputer = () => {
           <MenuGroup title='Virtual' color='black'>
             <MenuItem color='black' colorScheme='gray'>
               <Link to={"/pc/virtual/games"}>
+              {/* <Link to={"/category/all"}> */}
                 <VirtualGames />
               </Link>
             </MenuItem>
@@ -42,14 +43,15 @@ const PersonalComputer = () => {
           </MenuGroup>
           <MenuGroup title='Released' color='black'>
             <MenuItem color='black' colorScheme='gray'>
-              <Link to={"/pc/virtual/games/released"}>
+              {/* <Link to={"/category/released"}> */}
+              <Link to={`/category/released`}>
                 <ReleasedVirtual />
               </Link>
             </MenuItem>
           </MenuGroup>
           <MenuGroup title='Preorder' color='black'>
             <MenuItem color='black' colorScheme='gray'>
-              <Link to={"/pc/virtual/games/preorder"}>
+              <Link to={`/category/preorder`}>
                 <PreorderVirtual />
               </Link>
             </MenuItem>
