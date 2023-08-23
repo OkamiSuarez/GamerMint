@@ -3,7 +3,7 @@
 const VirtualGames = () => {
   return (
     <>
-    Games
+    All Games
     </>
   )
 }

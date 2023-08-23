@@ -23,6 +23,8 @@ const App = () => {
             <Route exact path="/category/:id" element={<ItemListContainer />} />
             <Route exact path="/item/:id" element={<ItemDetailContainer />} />
             <Route exact path="/pc/virtual/games" element={<ItemListContainer />} />
+            {/* <Route exact path="/pc/virtual/games/released" element={<ItemListContainer />} />
+            <Route exact path="/pc/virtual/games/preorder" element={<ItemListContainer />} /> */}
           </Routes>
       </CartProvider>
     </BrowserRouter>
