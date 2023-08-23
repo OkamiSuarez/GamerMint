@@ -47,6 +47,31 @@ const Cart = () => {
     })
   }
 
+  // console.log('proof of the cart existence')
+  // console.log(cart)
+  // console.log('cart.length')
+  // console.log(cart.length)
+  // const filteredQty = cart.filter((cart) => cart.quantity == 0)
+  // console.log('foundQty')
+  // console.log(foundQty)
+  // cart.splice(foundQty)
+  const foundQty = cart.find((element) => element.quantity == 0)
+  if(foundQty){
+    console.log('cart.indexOf(foundQty)')
+    console.log(cart.indexOf(foundQty))
+    let indexCart = cart.indexOf(foundQty)
+    cart.splice(indexCart,1)
+  }
+  // console.log(cart.quantity)
+  // console.log('filteredQty')
+  // console.log(filteredQty)
+  // cart.splice()
+  // if (filteredQty[0] != undefined){
+  //   cart.splice((cart) => cart.qty == 0)
+  // }else{
+  //   console.log('no items on 0')
+  // }
+
   if (loading) {
     setTimeout(() => {
       // setProofCart(['ElementA','ElementB'])
