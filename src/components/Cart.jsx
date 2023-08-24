@@ -23,8 +23,8 @@ const Cart = () => {
 
 
 
-  console.log('cart from context')
-  console.log(cart)
+  // console.log('cart from context')
+  // console.log(cart)
 
   const removeItem = (id) => {
     setCart((currItems) => {
@@ -61,6 +61,8 @@ const Cart = () => {
     console.log(cart.indexOf(foundQty))
     let indexCart = cart.indexOf(foundQty)
     cart.splice(indexCart,1)
+  }else{
+    // console.log('no items')
   }
   // console.log(cart.quantity)
   // console.log('filteredQty')
@@ -76,10 +78,10 @@ const Cart = () => {
     setTimeout(() => {
       // setProofCart(['ElementA','ElementB'])
       setLoading(false)
-    }, 3000)
+    }, 2000)
     return <Loading />
   } else {
-    console.log('Cart loaded')
+    // console.log('Cart loaded')
   }
 
   if(cart[0] === undefined){

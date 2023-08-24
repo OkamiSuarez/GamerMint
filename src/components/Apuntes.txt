@@ -11,3 +11,5 @@ El boton hace que se lea el ID de lo que le pasamos y muestra la card de lo que 
 despues de eso detalles nos va a mostrar la descripción y la card de lo que vamos a comprar 
 
 const filterProducts = productos.filter((producto) => producto.id == id)
+
+Revisar por que si se salta entre los eliminar bota dos de un solo golpe
