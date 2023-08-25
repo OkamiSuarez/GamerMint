@@ -13,7 +13,7 @@ const Cart = () => {
 
   const { cart, setCart } = useContext(CartContext)
 
-  const quantity = cart.reduce((acc, curr) => {
+  const qty = cart.reduce((acc, curr) => {
     return acc + curr.quantity
   }, 0)
 
@@ -27,24 +27,69 @@ const Cart = () => {
   // console.log(cart)
 
   const removeItem = (id) => {
+
+    // let foundQty = cart.find((element) => element.id ==id)
+    // if (foundQty) {
+    //   console.log('cart.indexOf(foundQty)')
+    //   console.log(cart.indexOf(foundQty))
+    //   let indexCart = cart.indexOf(foundQty)
+    //   cart.splice(indexCart, 1)
+    // } else {
+    //   // console.log('no items')
+    // }
+    
     setCart((currItems) => {
+
+      let foundQty = cart.find((element) => element.id ==id)
+      if (foundQty) {
+        console.log('cart.indexOf(foundQty)')
+        console.log(cart.indexOf(foundQty))
+        let indexCart = cart.indexOf(foundQty)
+        cart.splice(indexCart, 1)
+      } 
+
       if (currItems.find((item) => item.id != id)?.quantity === 1) {
+        // let proof1 = currItems.filter((item) => item.id != id)
+        // console.log('proof1')
+        // console.log(proof1)
         return currItems.filter((item) => item.id != id)
       } else {
         return currItems.map((item) => {
           if (item.id === id) {
             // console.log(item)
             // console.log(item.total)
-            if(item.quantity < 1){
-              item.quantity = 1
-            }
+            // if (item.quantity == 1) {
+            //   item.quantity = 0
+            // }
+            
+            // let foundQty = cart.find((element) => element.id ==id)
+            // if (foundQty) {
+            //   console.log('cart.indexOf(foundQty)')
+            //   console.log(cart.indexOf(foundQty))
+            //   let indexCart = cart.indexOf(foundQty)
+            //   cart.splice(indexCart, 1)
+            // } 
+            // else {
+            //   // console.log('no items')
+            // }
             return { ...item, quantity: item.quantity - 1 }
+            
           } else {
             return item
           }
         })
       }
     })
+
+    // let foundQty = cart.find((element) => element.quantity == 1)
+    // if (foundQty) {
+    //   console.log('cart.indexOf(foundQty)')
+    //   console.log(cart.indexOf(foundQty))
+    //   let indexCart = cart.indexOf(foundQty)
+    //   cart.splice(indexCart, 1)
+    // } else {
+    //   // console.log('no items')
+    // }
   }
 
   // console.log('proof of the cart existence')
@@ -55,15 +100,15 @@ const Cart = () => {
   // console.log('foundQty')
   // console.log(foundQty)
   // cart.splice(foundQty)
-  const foundQty = cart.find((element) => element.quantity == 0)
-  if(foundQty){
-    console.log('cart.indexOf(foundQty)')
-    console.log(cart.indexOf(foundQty))
-    let indexCart = cart.indexOf(foundQty)
-    cart.splice(indexCart,1)
-  }else{
-    // console.log('no items')
-  }
+  // const foundQty = cart.find((element) => element.quantity == 0)
+  // if (foundQty) {
+  //   console.log('cart.indexOf(foundQty)')
+  //   console.log(cart.indexOf(foundQty))
+  //   let indexCart = cart.indexOf(foundQty)
+  //   cart.splice(indexCart, 1)
+  // } else {
+  //   // console.log('no items')
+  // }
   // console.log(cart.quantity)
   // console.log('filteredQty')
   // console.log(filteredQty)
@@ -84,31 +129,30 @@ const Cart = () => {
     // console.log('Cart loaded')
   }
 
-  if(cart[0] === undefined){
-    return <EmptyCart/>
-  }else
+  if (cart[0] === undefined) {
+    return <EmptyCart />
+  } else
 
-  return (
-    <>
-      <center>
-        <h1>Items in cart: {quantity}</h1>
+    return (
+      <>
+        <center>
+          <h1>Items in cart: {qty}</h1>
 
-        {cart.map((p) => {
-          return (
-            <div key={p.id}>
-              {/* Por que ponemos aqui el key? */}
+          {cart.map((p) => {
+            return (
+              <div key={p.id}>
+                {/* Por que ponemos aqui el key? */}
+                <h2>Product {p.title}</h2>
+                <h3>Price {p.price}</h3>
+                <h3>Quantity {p.quantity}</h3>
+                <Button variant="solid" colorScheme="red" onClick={() => removeItem(p.id)}>
+                  Remove game
+                </Button>
 
-              <h2>Product {p.title}</h2>
-              <h3>Price {p.price}</h3>
-              <h3>Quantity {p.quantity}</h3>
-              <Button variant="solid" colorScheme="green" onClick={()=>removeItem(p.id)}>
-                Remove item
-              </Button>
-              
-            </div>
-          )
-        })}
-        {/* <Text color="black">Cart</Text>
+              </div>
+            )
+          })}
+          {/* <Text color="black">Cart</Text>
       <h1>Products on cart</h1>
       {proofCart.map((e)=>(
         <li>{e}</li>
@@ -118,13 +162,13 @@ const Cart = () => {
       <h2>Price {cart[0].price}</h2>
       <button onClick={()=> removeItem(cart[0].id)}>Remove item</button> */}
 
-        <h2>Total: ${totalPrice}</h2>
-        <button onClick={() => console.log(cart)}>Buy now (console)</button>
+          <h2>Total: ${totalPrice}</h2>
+          <button onClick={() => console.log(cart)}>Buy now (console)</button>
 
-      </center>
+        </center>
 
-    </>
-  )
+      </>
+    )
 }
 
 export default Cart
