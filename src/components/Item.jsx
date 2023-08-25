@@ -1,13 +1,7 @@
 import { Button, Image, Card, CardBody, Stack, Heading, Text, CardFooter, Spacer } from '@chakra-ui/react'
 import { Link } from 'react-router-dom';
-// import { useParams } from 'react-router-dom';
-// import ItemList from "./ItemList";
 
 const Item = ({ id, thumbnails, title, description, price, category }) => {
-
-    // const {id} = useParams()
-    // console.log("item")
-    // console.log(id)
 
     return (
 
@@ -25,10 +19,9 @@ const Item = ({ id, thumbnails, title, description, price, category }) => {
             <Stack>
                 <CardBody>
                     <Heading size='md'>{title}</Heading>
-
                     <Text py='2'>
                         {description}
-                    </Text>                    
+                    </Text>
                     <Text py='2'>
                         {category}
                     </Text>
@@ -39,9 +32,9 @@ const Item = ({ id, thumbnails, title, description, price, category }) => {
                     </p>
                     <Spacer></Spacer>
                     <Link to={`/item/${id}`}>
-                    <Button variant='solid' colorScheme='blue'>
-                        Descripton
-                    </Button>
+                        <Button variant='solid' colorScheme='blue'>
+                            Descripton
+                        </Button>
                     </Link>
                 </CardFooter>
             </Stack>

@@ -16,8 +16,6 @@ const EmptyCart = () => {
           <Link to='/pc/virtual/games'>Go buy some stuff</Link>
         </Button>
       </div>
-
-      {/* <Link to></Link> */}
     </Center>
   )
 }

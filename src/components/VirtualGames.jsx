@@ -1,9 +1,8 @@
-// import React from 'react'
 
 const VirtualGames = () => {
   return (
     <>
-    All Games
+      All Games
     </>
   )
 }

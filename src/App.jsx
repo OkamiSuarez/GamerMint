@@ -1,7 +1,3 @@
-// import React from 'react'
-// import Item from "./components/Item"
-// import ItemCount from "./components/ItemCount"
-import About from "./components/About"
 import Cart from "./components/Cart"
 import ItemDetailContainer from "./components/ItemDetailContainer"
 import Home from "./components/Home"
@@ -9,10 +5,7 @@ import ItemListContainer from "./components/ItemListContainer"
 import NavBar from "./components/NavBar"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CartProvider from "./context/CartContext"
-// import DocumentFB from "./components/DocumentFB"
-// import CollectionFB from "./components/CollectionFB"
 import SendOrder from "./components/SendOrder"
-// import { CartContext } from "./context/CartContext"
 
 const App = () => {
   return (
@@ -21,16 +14,11 @@ const App = () => {
         <NavBar/>
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/about" element={<About />} />
             <Route exact path="/cart" element={<Cart />} />
-            <Route exact path="/category/:category" element={<ItemListContainer />} />
             <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+            <Route exact path="/category/:category" element={<ItemListContainer />} />
             <Route exact path="/pc/virtual/games" element={<ItemListContainer />} />
-            {/* <Route exact path="/document" element={< DocumentFB/>} /> */}
-            {/* <Route exact path="/collection" element={< CollectionFB/>} /> */}
             <Route exact path="/checkout" element={<SendOrder/>} />
-            {/* <Route exact path="/pc/virtual/games/released" element={<ItemListContainer />} />
-            <Route exact path="/pc/virtual/games/preorder" element={<ItemListContainer />} /> */}
           </Routes>
       </CartProvider>
     </BrowserRouter>

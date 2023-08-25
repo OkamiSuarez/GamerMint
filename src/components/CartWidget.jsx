@@ -1,11 +1,10 @@
-// import React from 'react'
 import { StarIcon } from "@chakra-ui/icons"
 import { Box, Flex, Spacer } from "@chakra-ui/react"
 import { CartContext } from "../context/CartContext"
 import { useContext } from "react"
 const CartWidget = () => {
 
-  const {cart,setCart} = useContext(CartContext)
+  const {cart} = useContext(CartContext)
 
   const quantity = cart.reduce((acc,curr) =>{
     return acc + curr.quantity
