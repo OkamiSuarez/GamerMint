@@ -5,12 +5,9 @@ import Loading from './Loading'
 import EmptyCart from './EmptyCart'
 import { Link } from 'react-router-dom'
 
-
-
 const Cart = () => {
 
   const [loading, setLoading] = useState(true)
-
   const { cart, setCart } = useContext(CartContext)
 
   const qty = cart.reduce((acc, curr) => {
@@ -76,7 +73,6 @@ const Cart = () => {
               </div>
             )
           })}
-
           <h2>Total: ${totalPrice}</h2>
           <br />
           <Button variant="solid" colorScheme="red" onClick={() => clearCart()}>
