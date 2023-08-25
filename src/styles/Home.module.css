@@ -1,0 +1,21 @@
+.homeContainer {
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    height: 100vh;
+    padding: 2rem;
+}
+
+.welcome {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2.8px;
+    word-spacing: -3.4px;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    text-align: center;
+}

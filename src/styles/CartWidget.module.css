@@ -1,0 +1,11 @@
+.widgetContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.cartImg{
+    height: 2rem;
+    width: 1.5rem;
+}

@@ -1,0 +1,35 @@
+.navBarContainer{
+    display: flex;
+    background-color: rgb(58, 195, 223);
+    color: rgb(0, 0, 0);
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.btnBrand{
+    font-size: 3rem;
+
+}
+.btnPc{
+    font-size: 1rem;
+    border-color:#0b0e07;
+    border-top-left-radius:14px;
+    border-top-right-radius:14px;
+    border-bottom-left-radius:14px;
+    border-bottom-right-radius:14px;
+    background:linear-gradient(#000000, #000000);
+}
+.btnCart{
+    font-size:1rem;
+    font-family:Arial;
+    width:130px;
+    height:52px;
+    color:#000000;
+    border-color:#0b0e07;
+    border-top-left-radius:14px;
+    border-top-right-radius:14px;
+    border-bottom-left-radius:14px;
+    border-bottom-right-radius:14px;
+    background-color: white;
+}

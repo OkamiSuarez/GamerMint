@@ -1,7 +1,7 @@
-import { StarIcon } from "@chakra-ui/icons"
-import { Box, Flex, Spacer } from "@chakra-ui/react"
 import { CartContext } from "../context/CartContext"
 import { useContext } from "react"
+import styles from '../styles/CartWidget.module.css'
+
 const CartWidget = () => {
 
   const {cart} = useContext(CartContext)
@@ -11,17 +11,12 @@ const CartWidget = () => {
   }, 0)
 
   return (
-    <Flex>
-        <Box>
-            <StarIcon/>
-        </Box>
-    <Spacer/>
-        <Box>
-            <p>Qty</p>
-            <p>{quantity}</p>
-        </Box>
-    </Flex>
-
+    <div className={styles.widgetContainer}>
+      {/* Poner un cart aqui */}
+      <img src="src\imgs\Cart.jpeg" alt="Cart Image" className={styles.cartImg}/>
+      <p>Qty</p>
+      <p>{quantity}</p>
+    </div>
   )
 }
 

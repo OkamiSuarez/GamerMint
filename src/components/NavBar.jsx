@@ -1,27 +1,25 @@
 import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import PersonalComputer from "./PersonalComputer";
-import { Box, Text, Flex } from '@chakra-ui/react'
+import styles from '../styles/NavBar.module.css'
 
 const NavBar = () => {
   return (
-    <Flex backgroundColor={"black"}>
-      {/* Brand of the project */}
-      <Box bg='white' w='100%' p={4} color='white' backgroundColor='black'>
+    <div className={styles.navBarContainer}>
+      <button className={styles.btnBrand}>
         <Link to={"/"}>
-          <Text fontSize='5xl' color='blue' >GamerMint</Text>
+          <h1>GamerMint</h1>
         </Link>
-      </Box>
-      <Box bg='white' w='100%' p={4} color='white' backgroundColor='gray'>
+      </button>
+      <div className={styles.btnPc}>
         <PersonalComputer></PersonalComputer>
-      </Box>
-      {/* Cart component */}
-      <Box bg='white' w='100%' p={4} backgroundColor='black' color='white'>
-        <Link to={"/cart"}>
-          <CartWidget />
-        </Link>
-      </Box>
-    </Flex>
+      </div>
+      <button className={styles.btnCart}>
+      <Link to={"/cart"}>
+        <CartWidget />
+      </Link>
+      </button>
+    </div>
   );
 };
 

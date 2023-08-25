@@ -4,6 +4,7 @@ import { Button } from '@chakra-ui/react'
 import Loading from './Loading'
 import EmptyCart from './EmptyCart'
 import { Link } from 'react-router-dom'
+import styles from '../styles/Cart.module.css'
 
 const Cart = () => {
 
