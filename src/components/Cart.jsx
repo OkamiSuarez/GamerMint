@@ -92,6 +92,10 @@ const Cart = () => {
     // }
   }
 
+  const clearCart = () =>{
+    setCart([])
+  }
+
   // console.log('proof of the cart existence')
   // console.log(cart)
   // console.log('cart.length')
@@ -149,6 +153,7 @@ const Cart = () => {
                   Remove game
                 </Button>
 
+
               </div>
             )
           })}
@@ -163,8 +168,10 @@ const Cart = () => {
       <button onClick={()=> removeItem(cart[0].id)}>Remove item</button> */}
 
           <h2>Total: ${totalPrice}</h2>
-          <button onClick={() => console.log(cart)}>Buy now (console)</button>
-
+          <Button variant="solid" colorScheme="green" onClick={() => console.log(cart)}>Buy now (console)</Button>
+          <Button variant="solid" colorScheme="red" onClick={() => clearCart()}>
+                  Clear cart
+                </Button>
         </center>
 
       </>
