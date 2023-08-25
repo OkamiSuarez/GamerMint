@@ -3,6 +3,7 @@ import { CartContext } from '../context/CartContext'
 import { Button } from '@chakra-ui/react'
 import Loading from './Loading'
 import EmptyCart from './EmptyCart'
+import { Link } from 'react-router-dom'
 
 
 
@@ -37,16 +38,16 @@ const Cart = () => {
     // } else {
     //   // console.log('no items')
     // }
-    
+
     setCart((currItems) => {
 
-      let foundQty = cart.find((element) => element.id ==id)
+      let foundQty = cart.find((element) => element.id == id)
       if (foundQty) {
         console.log('cart.indexOf(foundQty)')
         console.log(cart.indexOf(foundQty))
         let indexCart = cart.indexOf(foundQty)
         cart.splice(indexCart, 1)
-      } 
+      }
 
       if (currItems.find((item) => item.id != id)?.quantity === 1) {
         // let proof1 = currItems.filter((item) => item.id != id)
@@ -61,7 +62,7 @@ const Cart = () => {
             // if (item.quantity == 1) {
             //   item.quantity = 0
             // }
-            
+
             // let foundQty = cart.find((element) => element.id ==id)
             // if (foundQty) {
             //   console.log('cart.indexOf(foundQty)')
@@ -73,7 +74,7 @@ const Cart = () => {
             //   // console.log('no items')
             // }
             return { ...item, quantity: item.quantity - 1 }
-            
+
           } else {
             return item
           }
@@ -92,7 +93,7 @@ const Cart = () => {
     // }
   }
 
-  const clearCart = () =>{
+  const clearCart = () => {
     setCart([])
   }
 
@@ -168,10 +169,15 @@ const Cart = () => {
       <button onClick={()=> removeItem(cart[0].id)}>Remove item</button> */}
 
           <h2>Total: ${totalPrice}</h2>
-          <Button variant="solid" colorScheme="green" onClick={() => console.log(cart)}>Buy now (console)</Button>
+          {/* <Button variant="solid" colorScheme="green" onClick={() => console.log(cart)}>Buy now (console)</Button> */}
+          <br />
           <Button variant="solid" colorScheme="red" onClick={() => clearCart()}>
-                  Clear cart
-                </Button>
+            Clear cart
+          </Button>
+          <br />
+          <Button variant="solid" colorScheme="green">
+            <Link to='/checkout'>Buy now</Link>
+          </Button>
         </center>
 
       </>
