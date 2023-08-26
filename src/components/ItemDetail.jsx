@@ -12,9 +12,6 @@ const ItemDetail = ({ products }) => {
 
     const onAdd = (price, title) => {
         if(counter === 0){
-            // console.error('no products selected, count is 0')
-            // alert('no products selected, count on 0')
-            // window.location.reload();
             return alert('no products selected, count on 0')
         }
 
