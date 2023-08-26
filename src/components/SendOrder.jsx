@@ -43,10 +43,10 @@ const SendOrder = () => {
             <h1 className={styles.h1Title}>Checkout</h1>
             <form className={styles.formContainer} onSubmit={handleSubmit}>
                 <input type="text" placeholder="Name" className={styles.inputForm}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => setName(e.target.value)} required
                 />
-                <input type="text" placeholder="Email" className={styles.inputForm}
-                    onChange={(e) => setEmail(e.target.value)}
+                <input type="email" placeholder="Email" className={styles.inputForm}
+                    onChange={(e) => setEmail(e.target.value)} required
                 />
                 <button className={styles.greenBtn} type="submit"> Send Information </button>
             </form>

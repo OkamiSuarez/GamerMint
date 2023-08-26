@@ -27,6 +27,7 @@
     border-style:solid; 
     box-shadow:inset 0px 0px 5px 0px rgba(42,42,42,.75); 
     background-color:#ffffff;
+    color: #000000;
 }
 .greenBtn{
     font-size:1.2rem;

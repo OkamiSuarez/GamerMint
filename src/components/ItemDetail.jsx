@@ -6,11 +6,18 @@ import styles from '../styles/ItemDetail.module.css'
 
 const ItemDetail = ({ products }) => {
 
-    const { cart, setCart } = useContext(CartContext)
+    const { setCart } = useContext(CartContext)
     const [counter, setCounter] = useState(0)
     const [stock, setStock] = useState(25)
 
     const onAdd = (price, title) => {
+        if(counter === 0){
+            // console.error('no products selected, count is 0')
+            // alert('no products selected, count on 0')
+            // window.location.reload();
+            return alert('no products selected, count on 0')
+        }
+
         setCart((currItems) => {
             const isItemFound = currItems.find((item) => item.id === id)
 
