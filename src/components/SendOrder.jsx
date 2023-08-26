@@ -3,6 +3,7 @@ import { useContext, useState } from 'react'
 import { collection, addDoc, getFirestore } from "firebase/firestore"
 import EmptyCart from './EmptyCart'
 import CompleteCheckout from './CompleteCheckout'
+import styles from '../styles/SendOrder.module.css'
 
 const SendOrder = () => {
 
@@ -38,18 +39,18 @@ const SendOrder = () => {
     }
 
     return (
-        <div>
-            <h1>Sending Orders</h1>
-            <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Name"
+        <div className={styles.homeContainer}>
+            <h1 className={styles.h1Title}>Checkout</h1>
+            <form className={styles.formContainer} onSubmit={handleSubmit}>
+                <input type="text" placeholder="Name" className={styles.inputForm}
                     onChange={(e) => setName(e.target.value)}
                 />
-                <input type="text" placeholder="Email"
+                <input type="text" placeholder="Email" className={styles.inputForm}
                     onChange={(e) => setEmail(e.target.value)}
                 />
-                <button type="submit"> Send Information </button>
+                <button className={styles.greenBtn} type="submit"> Send Information </button>
             </form>
-            <p>Order number: {orderId}</p>
+            {/* <p>Order number: {orderId}</p> */}
         </div>
     )
 }

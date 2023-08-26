@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import { CartContext } from '../context/CartContext'
-import { Button } from '@chakra-ui/react'
+// import { Button } from '@chakra-ui/react'
 import Loading from './Loading'
 import EmptyCart from './EmptyCart'
 import { Link } from 'react-router-dom'
@@ -48,7 +48,7 @@ const Cart = () => {
   if (loading) {
     setTimeout(() => {
       setLoading(false)
-    }, 2000)
+    }, 2500)
     return <Loading />
   } else {
     // console.log('Cart loaded')
@@ -59,33 +59,37 @@ const Cart = () => {
   } else
 
     return (
-      <>
-        <center>
-          <h1>Items in cart: {qty}</h1>
+      <div className={styles.cartContainer}>
+        {/* <center> */}
+          <h1 className={styles.h1Cart}>Items in cart: {qty}</h1>
+          <div className={styles.cartCardsContainer}>
+            
           {cart.map((p) => {
             return (
-              <div key={p.id}>
+              <div className={styles.itemContainer} key={p.id}>
                 <h2>Product {p.title}</h2>
                 <h3>Price {p.price}</h3>
                 <h3>Quantity {p.quantity}</h3>
-                <Button variant="solid" colorScheme="red" onClick={() => removeItem(p.id)}>
+                <button className={styles.redBtn} onClick={() => removeItem(p.id)}>
                   Remove game
-                </Button>
+                </button>
               </div>
             )
           })}
-          <h2>Total: ${totalPrice}</h2>
-          <br />
-          <Button variant="solid" colorScheme="red" onClick={() => clearCart()}>
-            Clear cart
-          </Button>
-          <br />
-          <Button variant="solid" colorScheme="green">
-            <Link to='/checkout'>Buy now</Link>
-          </Button>
-        </center>
+          </div>
+          <h2 className={styles.h2Cart}>Total: ${totalPrice}</h2>
+          {/* <br /> */}
+          <button className={styles.redBtn} onClick={() => clearCart()}>
+          Clear cart
+          </button>
+          <Link to='/checkout'>
+          <button className={styles.greenBtn}>
+            Buy now
+          </button>
+          </Link>
 
-      </>
+
+      </div>
     )
 }
 

@@ -1,0 +1,21 @@
+.homeContainer {
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    height: 100vh;
+    padding: 5rem;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 2rem;
+}
+.h1Title{
+    font-size: 2.5rem;
+}
+.h2Text{
+    font-size: 2.2rem;
+}
+.h2Ticket{
+    font-size: 2rem;
+    color: rgb(38, 224, 245);
+}

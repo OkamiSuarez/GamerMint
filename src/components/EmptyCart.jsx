@@ -1,22 +1,27 @@
 import { Link } from "react-router-dom"
 import { Center, Button } from "@chakra-ui/react"
+import styles from '../styles/EmptyCart.module.css'
 
 const EmptyCart = () => {
   return (
-    <Center>
-      <div>
+    <div className={styles.emptyCartContainer}>
 
         <h1>
-          Your cart is missing some items
+          Your chest is missing treasures
         </h1>
-      </div>
 
-      <div>
-        <Button variant="solid" colorScheme="green">
-          <Link to='/pc/virtual/games'>Go buy some stuff</Link>
-        </Button>
-      </div>
-    </Center>
+        {/* <Button variant="solid" colorScheme="green"> */}
+          <Link to='/pc/virtual/games'>
+      <button className={styles.greenBtn}>
+
+            Go buy some items
+      </button>
+            </Link>
+        {/* </Button> */}
+
+    </div>
+    // <Center>
+    // </Center>
   )
 }
 

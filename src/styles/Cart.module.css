@@ -1,0 +1,71 @@
+.cartContainer{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    height: 100vh;
+    padding: 2rem;
+    gap: 1rem;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.h1Cart{
+    font-size: 3rem;
+}
+.h2Cart{
+    font-size: 2.5rem;
+}
+.cartCardsContainer{
+    display: flex;
+    color: rgb(0, 0, 0);
+    font-size: 1.7rem;
+    padding: 1rem;
+    gap: 1rem;
+    flex-direction: row;
+    align-items: center;
+}
+.itemContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: #06a85a;
+    padding: 2rem;
+    border-radius: 3rem;
+    gap: 1rem;
+}
+.greenBtn{
+    font-size:1.5rem;
+    font-family:Arial;
+    width:10rem;
+    height:46px;
+    border-width:0px;
+    color:#ffffff;
+    border-color: #000000;
+    font-weight:bold;
+    border-top-left-radius:16px;
+    border-top-right-radius:16px;
+    border-bottom-left-radius:16px;
+    border-bottom-right-radius:16px;
+    background:#15bd0f;
+}
+.greenBtn:hover{
+    background: linear-gradient(#0ca806, #06a85a);
+}
+.redBtn{
+    font-size:1.5rem;
+    font-family:Arial;
+    width:12rem;
+    height:5;
+    border-width:0px;
+    color:#ffffff;
+    /* font-weight:bold; */
+    border-top-left-radius:16px;
+    border-top-right-radius:16px;
+    border-bottom-left-radius:16px;
+    border-bottom-right-radius:16px;
+    background:#e40000;
+}
+.redBtn:hover{
+    background: linear-gradient(#b30000, #7c0000);
+}

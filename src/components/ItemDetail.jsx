@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom"
 import { Card, Stack, CardBody, CardFooter, Heading, Button, Divider, Image, ButtonGroup, Text, Center } from "@chakra-ui/react";
 import { useState, useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import styles from '../styles/ItemDetail.module.css'
 
 const ItemDetail = ({ products }) => {
 
@@ -56,14 +57,14 @@ const ItemDetail = ({ products }) => {
     const filteredProducts = products.filter((product) => product.id == id)
 
     return (
-        <div>
+        <div className={styles.ItemDetailContainer}>
             <center>
                 {filteredProducts.map((p) => {
                     return (
                         <div key={p.id}>
-                            <Card maxW='sm'>
+                            <Card width={900}>
                                 <CardBody>
-                                    <Image src={p.pictureUrl} alt={p.title} borderRadius='lg' />
+                                    <Image src={p.pictureUrl} alt={p.title} borderRadius='lg' maxWidth={400} maxHeight={300}/>
                                     <Stack mt='6' spacing='3'>
                                         <Heading size='md'>{p.title}</Heading>
                                         <Text>{p.description}</Text>
@@ -73,10 +74,39 @@ const ItemDetail = ({ products }) => {
                                     </Stack>
                                 </CardBody>
                                 <Divider />
-                                <CardFooter>
-                                    <ButtonGroup spacing='2'>
+                                {/* <CardFooter> */}
+
+                                    <div className={styles.btnsContainer}>
+
+                                    <button className={styles.greenBtn} onClick={AddCount}>
+                                                +
+                                            </button>
+                                            <button className={styles.mainBtn} onClick={() => onAdd(p.price, p.title)}>
+                                                Add to cart
+                                            </button>
+                                            <button className={styles.redBtn} onClick={DeleteCount}>
+                                                -
+                                            </button>
+                                            <Link to='/cart'>
+                                                <button className={styles.mainBtn}>
+
+                                                Go to cart
+                                                </button>
+                                                </Link>
+                                    </div>
+
+                                    {/* <ButtonGroup spacing='2'>
                                         <Stack spacing={4} direction='row' align='center'>
-                                            <Button variant="solid" colorScheme="green" onClick={AddCount}>
+                                            <button className={styles.greenBtn} onClick={AddCount}>
+                                                +
+                                            </button>
+                                            <button className={styles.buyBtn} onClick={() => onAdd(p.price, p.title)}>
+                                                Add to cart
+                                            </button>
+                                            <button className={styles.redBtn} onClick={DeleteCount}>
+                                                -
+                                            </button> */}
+                                            {/* <Button variant="solid" colorScheme="green" onClick={AddCount}>
                                                 +
                                             </Button>
                                             <Button variant="solid" colorScheme="blue" onClick={() => onAdd(p.price, p.title)}>
@@ -87,11 +117,11 @@ const ItemDetail = ({ products }) => {
                                             </Button>
                                             <Button variant="solid" colorScheme="red" onClick={DeleteCount}>
                                                 -
-                                            </Button >
-                                            <Link to='/cart'>Go to cart</Link>
+                                            </Button > */}
+                                            {/* <Link to='/cart'>Go to cart</Link>
                                         </Stack>
-                                    </ButtonGroup>
-                                </CardFooter>
+                                    </ButtonGroup> */}
+                                {/* </CardFooter> */}
                             </Card>
                         </div>
                     )
