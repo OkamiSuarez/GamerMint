@@ -1,7 +1,8 @@
 # Gamer Mint
 
-Gamer Mint is a React project based on an e-commerce focused on videogames
-This project was created CoderHouse Fullstack career using firebase as a service that provides data to the system like id, game title, description, price and image url, these values were used to create the category layouts
+Gamer Mint is a React project based on an e-commerce focused on videogames.
+
+This project was created for CoderHouse Fullstack career 'React' subject using firebase as a service which provides data to the system like id, game title, description, price and image url, these values were used to create the category layouts.
 
 <h3 align="left">Languages and Tools:</h3>
 <p align="left"> 
