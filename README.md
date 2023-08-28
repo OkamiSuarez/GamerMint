@@ -21,13 +21,17 @@ This project was created for CoderHouse Fullstack career 'React' subject using f
 
 
 
-![hippo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTU3YmRjdjV6Zjh2eXZoN3BmbG1uYjhmN2U3azl2cnhvN3ZxcDlkOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ukorth4mW8DUm3lMXC/giphy.gif)
+![hippo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2loMWdndmNieGd5bGg4cjR1bDhmMGRwOGkxYnhkdzBjbTFybHY5ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/A2W29urf5xHklap89F/giphy.gif)
 
 [![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=anuraghazra)](https://github.com/anuraghazra/github-readme-stats)
 
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/https://www.linkedin.com/in/okami97backdev/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/okami97backdev/" height="30" width="40" /></a>
-</p>
+<h2 align="left">Connect with me:</h2>
+
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://okamisuarez.github.io/Portfolio/)
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/okami97backdev/)
+
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=okamisuarez&label=Profile%20views&color=0e75b6&style=flat" alt="okamisuarez" /> </p>
 
