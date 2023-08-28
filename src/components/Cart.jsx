@@ -67,9 +67,9 @@ const Cart = () => {
           {cart.map((p) => {
             return (
               <div className={styles.itemContainer} key={p.id}>
-                <h2>Product {p.title}</h2>
-                <h3>Price {p.price}</h3>
-                <h3>Quantity {p.quantity}</h3>
+                <h2>Game: {p.title}</h2>
+                <h3>Price: {p.price}</h3>
+                <h3>Qty: {p.quantity}</h3>
                 <button className={styles.redBtn} onClick={() => removeItem(p.id)}>
                   Remove game
                 </button>
